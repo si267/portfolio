@@ -1,5 +1,3 @@
-
-
   $receiving_email_address = 'clementsavaridoss@gmail.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
