@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -36,4 +37,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
+=======
+<<<<<<< HEAD
+<?php
+=======
+>>>>>>> 42798ba5b810ed5392aa6c3b5aa505273c681ca9
+  $receiving_email_address = 'clementsavaridoss@gmail.com';
+
+  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+    include( $php_email_form );
+  } else {
+    die( 'Unable to load the "PHP Email Form" Library!');
+  }
+
+  $contact = new PHP_Email_Form;
+  $contact->ajax = true;
+  
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
+
+ 
+  $contact->smtp = array(
+    'host' => 'example.com',
+    'username' => 'example',
+    'password' => 'pass',
+    'port' => '587'
+  );
+  */
+
+  $contact->add_message( $_POST['name'], 'From');
+  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $_POST['message'], 'Message', 10);
+
+  echo $contact->send();
+>>>>>>> 55d77d3f0855c0a686609f40f6451312af15de6f
 ?>
